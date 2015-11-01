@@ -2,7 +2,6 @@ var _ = require('lodash'),
     logger = require('./../lib/logger');
 
 module.exports = (req, res) => {
-
     if (typeof req.body.payload === 'undefined') {
         logger.error('Missing payload parameter');
         return res.status(400).send({ error: "Missing payload" })

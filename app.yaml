@@ -1,0 +1,30 @@
+runtime: custom
+vm: true
+api_version: 1
+
+health_check:
+  enable_health_check: False
+
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 10
+  cool_down_period_sec: 60
+  cpu_utilization:
+    target_utilization: 0.5
+
+resources:
+  cpu: 2
+  memory_gb: 2
+  disk_size_gb: 10
+
+skip_files:
+ - ^(.*/)?#.*#$
+ - ^(.*/)?.*~$
+ - ^(.*/)?.*\.py[co]$
+ - ^(.*/)?.*/RCS/.*$
+ - ^(.*/)?\..*$
+ - ^(.*/)?.*/node_modules/.*$
+ - ^(.*/)?.*\.logs$
+
+env_variables:
+  NODE_ENV: 'production'

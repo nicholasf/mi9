@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 
 app.use((err, req, res, next) => {
     if (err.message.match(/Unexpected end of input/)) {
+        logger.error("Could not decode request: JSON parsing failed");
         return res.status(400).send({ error: 'Could not decode request: JSON parsing failed' });
     }
 

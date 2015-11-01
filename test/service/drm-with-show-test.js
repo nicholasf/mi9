@@ -23,6 +23,18 @@ describe('using the supplied fixture', function() {
             done();
         });
     });
+
+    it('produces an exact match to the supplied response fixture', (done) => {
+        var suppliedResponse = require('./../fixture/sample-response.json');
+
+        test(fixture, (err, res) => {
+            var local = JSON.stringify(res.body);
+            var supplied = JSON.stringify(suppliedResponse);
+            console.log(supplied)
+            expect(local).to.equal(supplied);
+            done();
+        });
+    });
 });
 
 describe('error handling', () => {
