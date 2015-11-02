@@ -41,7 +41,7 @@ describe('error handling', () => {
     it('handles an empty document', (done) => {
         test('', (err, res) => {
             expect(res.status).to.equal(400);
-            expect(res.body.error).to.equal('Missing payload')
+            expect(res.body.error).to.equal('Could not decode request: JSON parsing failed')
             done();
         });
     });

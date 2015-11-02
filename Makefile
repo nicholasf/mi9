@@ -19,4 +19,4 @@ manual-broken:
 
 manual-broken-gae:
 	curl -X POST -d @test/fixture/sample-broken-request.json -H 'Content-Type:application/json' 'https://carbide-atlas-829.appspot.com'
-	
+

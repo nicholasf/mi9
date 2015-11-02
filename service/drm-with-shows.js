@@ -4,7 +4,7 @@ var _ = require('lodash'),
 module.exports = (req, res) => {
     if (typeof req.body.payload === 'undefined') {
         logger.error('Missing payload parameter');
-        return res.status(400).send({ error: "Missing payload" })
+        return res.status(400).send({ error: "Could not decode request: JSON parsing failed" })
     }
 
     var shows = _.filter(req.body.payload, (show) => {
