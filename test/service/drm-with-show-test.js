@@ -30,7 +30,6 @@ describe('using the supplied fixture', function() {
         test(fixture, (err, res) => {
             var local = JSON.stringify(res.body);
             var supplied = JSON.stringify(suppliedResponse);
-            console.log(supplied)
             expect(local).to.equal(supplied);
             done();
         });
